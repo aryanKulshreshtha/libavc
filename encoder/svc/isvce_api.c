@@ -4604,18 +4604,18 @@ static IV_STATUS_T isvce_set_qp(void *pv_api_ip, void *pv_api_op, isvce_cfg_para
             CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_i_qp_min[i]);
         ps_cfg->au4_i_qp[i] = CLIP3(ps_set_qp_ip->pu4_i_qp_min[i], ps_set_qp_ip->pu4_i_qp_max[i],
                                     ps_set_qp_ip->pu4_i_qp[i]);
-        ps_cfg->au4_i_qp_max[i] =
-            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_i_qp_max[i]);
-        ps_cfg->au4_i_qp_min[i] =
-            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_i_qp_min[i]);
-        ps_cfg->au4_i_qp[i] = CLIP3(ps_set_qp_ip->pu4_i_qp_min[i], ps_set_qp_ip->pu4_i_qp_max[i],
-                                    ps_set_qp_ip->pu4_i_qp[i]);
-        ps_cfg->au4_i_qp_max[i] =
-            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_i_qp_max[i]);
-        ps_cfg->au4_i_qp_min[i] =
-            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_i_qp_min[i]);
-        ps_cfg->au4_i_qp[i] = CLIP3(ps_set_qp_ip->pu4_i_qp_min[i], ps_set_qp_ip->pu4_i_qp_max[i],
-                                    ps_set_qp_ip->pu4_i_qp[i]);
+        ps_cfg->au4_p_qp_max[i] =
+            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_p_qp_max[i]);
+        ps_cfg->au4_p_qp_min[i] =
+            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_p_qp_min[i]);
+        ps_cfg->au4_p_qp[i] = CLIP3(ps_set_qp_ip->pu4_p_qp_min[i], ps_set_qp_ip->pu4_p_qp_max[i],
+                                    ps_set_qp_ip->pu4_p_qp[i]);
+        ps_cfg->au4_b_qp_max[i] =
+            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_b_qp_max[i]);
+        ps_cfg->au4_b_qp_min[i] =
+            CLIP3(MIN_H264_QP, MAX_H264_QP, (WORD32) ps_set_qp_ip->pu4_b_qp_min[i]);
+        ps_cfg->au4_b_qp[i] = CLIP3(ps_set_qp_ip->pu4_b_qp_min[i], ps_set_qp_ip->pu4_b_qp_max[i],
+                                    ps_set_qp_ip->pu4_b_qp[i]);
     }
 
     ps_cfg->u4_timestamp_high = ps_set_qp_ip->s_ive_ip.u4_timestamp_high;
